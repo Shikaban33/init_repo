@@ -20,6 +20,7 @@ remove_before_setup:
 	powershell -Command "if (Test-Path 'venv') { Remove-Item -Recurse -Force 'venv' }"
 	powershell -Command "if (Test-Path 'poetry.lock') { Remove-Item -Force 'poetry.lock' }"
 	powershell -Command "if (Test-Path 'pyproject.toml') { Remove-Item -Force 'pyproject.toml' }"
+	powershell -Command "if (Test-Path 'poetry.toml') { Remove-Item -Force 'poetry.toml' }"
 setup:
 	python -m venv venv
 	.\venv\Scripts\python -m pip install --upgrade pip
