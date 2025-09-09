@@ -10,7 +10,7 @@ After installing and configuring `make`, run:
 
 Remove poetry and venv files for clean install
 ```bash
-make remove_before_setup
+make cleanup
 ```
 Run initial setup
 ```bash

@@ -13,7 +13,7 @@ generate_requitements_file:
 	@echo "➜ Creating requirements.txt"
 	poetry export -f requirements.txt --output $(REQ_FILE) --without-hashes
 
-remove_before_setup:
+cleanup:
 	powershell -Command "if (Test-Path 'venv') { Remove-Item -Recurse -Force 'venv' }"
 	powershell -Command "if (Test-Path 'poetry.lock') { Remove-Item -Force 'poetry.lock' }"
 	powershell -Command "if (Test-Path 'pyproject.toml') { Remove-Item -Force 'pyproject.toml' }"
