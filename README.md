@@ -4,15 +4,15 @@ After installing and configuring (make) run:
 -- make setup
 -- make install
 
-# Create venv
+#### Create venv
 Create venv
 -- python -m venv venv
 
-# Project
+#### Project
 Install all packages:
 -- make install_pack
 
-# Poetry
+#### Poetry
 Install poetry:
 -- pip install poetry
 
@@ -28,7 +28,7 @@ Import from requirements.txt:
 To add packages to poetry (example: pandas):
 -- poetry add pandas
 
-# Additional commands:
+#### Additional commands:
 Check if venv activated:
 -- Get-Command python | Select-Object Source
 
