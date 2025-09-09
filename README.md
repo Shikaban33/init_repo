@@ -7,6 +7,7 @@ This guide explains how to set up the project automatically using `make`, Python
 ## Automatic Setup
 
 After installing and configuring `make`, run:
+
 Remove poetry and venv files for clean install
 ```bash
 make remove_before_setup
