@@ -18,10 +18,10 @@ make setup
 ```
 In cmd or powershell activate venv
 ```bash
-.\venv\Scripts\Activate.ps1
+.\venv\Scripts\activate.bat
 ```
 ```bash
-.\venv\Scripts\activate.bat
+.\venv\Scripts\Activate.ps1
 ```
 Setup flake, isort, black and pre-commit
 ```bash
