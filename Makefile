@@ -16,11 +16,13 @@ install:
 generate_requitements_file:
 	@echo "➜ Creating requirements.txt"
 	poetry export -f requirements.txt --output $(REQ_FILE) --without-hashes
+
 remove_before_setup:
 	powershell -Command "if (Test-Path 'venv') { Remove-Item -Recurse -Force 'venv' }"
 	powershell -Command "if (Test-Path 'poetry.lock') { Remove-Item -Force 'poetry.lock' }"
 	powershell -Command "if (Test-Path 'pyproject.toml') { Remove-Item -Force 'pyproject.toml' }"
 	powershell -Command "if (Test-Path 'poetry.toml') { Remove-Item -Force 'poetry.toml' }"
+
 setup:
 	python -m venv venv
 	.\venv\Scripts\python -m pip install --upgrade pip
@@ -28,3 +30,8 @@ setup:
 	poetry init --no-interaction --name project --dependency requests
 	poetry config virtualenvs.create false --local
 	poetry cache clear --all pypi --no-interaction
+
+setup_formatting:
+	poetry add --dev flake8 black
+	poetry add --dev pre-commit
+	pre-commit install
