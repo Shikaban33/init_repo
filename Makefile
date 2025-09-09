@@ -1,5 +1,5 @@
 REQ_FILE   ?= requirements.txt
-.PHONY: run run_web install_pack create_req
+.PHONY: run install generate_requitements_file cleanup clean_cache setup setup_formatting
 
 run:
 	@echo "--Running backend--"
@@ -7,13 +7,13 @@ run:
 
 install:
 	@echo "➜ Installing packages"
-	poetry install --no-interaction
+	poetry install
 
 generate_requitements_file:
 	@echo "➜ Creating requirements.txt"
 	poetry export -f requirements.txt --output $(REQ_FILE) --without-hashes
 
-cleanup:
+cleanup: clean_cache
 	powershell -Command "if (Test-Path 'venv') { Remove-Item -Recurse -Force 'venv' }"
 	powershell -Command "if (Test-Path 'poetry.lock') { Remove-Item -Force 'poetry.lock' }"
 	powershell -Command "if (Test-Path 'pyproject.toml') { Remove-Item -Force 'pyproject.toml' }"
