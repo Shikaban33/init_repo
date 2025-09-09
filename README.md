@@ -1,40 +1,97 @@
-### Automatic setup ###
-After installing and configuring (make) run:
--- make remove_before_setup
--- make setup
--- make install
+# Automatic Setup
 
-#### Create venv
-Create venv
--- python -m venv venv
+This guide explains how to set up the project automatically using `make`, Python virtual environments, and Poetry.
 
-#### Project
-Install all packages:
--- make install_pack
+---
 
-#### Poetry
-Install poetry:
--- pip install poetry
+## Automatic Setup
 
-Init pyptoject.toml:
--- poetry init
+After installing and configuring `make`, run:
 
-Force poetry to use venv:
--- poetry config virtualenvs.create false --local
+```bash
+make remove_before_setup
+make setup
+make install
+```
 
-Import from requirements.txt:
--- poetry add $(Get-Content requirements.txt)
+---
 
-To add packages to poetry (example: pandas):
--- poetry add pandas
+## Create Virtual Environment (venv)
 
-#### Additional commands:
-Check if venv activated:
--- Get-Command python | Select-Object Source
+Create a virtual environment:
 
-Bring venv indicator:
--- .\venv\Scripts\Activate
+```bash
+python -m venv venv
+```
 
-Install make: (use admin)
--- choco install make -y
+Activate it to bring up the venv indicator:
 
+```bash
+.\venv\Scripts\Activate
+```
+
+Check if the correct Python is active:
+
+```bash
+Get-Command python | Select-Object Source
+```
+
+---
+
+## Project Packages
+
+Install all required packages:
+
+```bash
+make install_pack
+```
+
+---
+
+## Poetry
+
+### Install Poetry
+
+```bash
+pip install poetry
+```
+
+### Initialize `pyproject.toml`
+
+```bash
+poetry init
+```
+
+### Force Poetry to use the current venv
+
+```bash
+poetry config virtualenvs.create false --local
+```
+
+### Import packages from `requirements.txt`
+
+```bash
+poetry add $(Get-Content requirements.txt)
+```
+
+### Add packages manually (example: pandas)
+
+```bash
+poetry add pandas
+```
+
+---
+
+## Additional Commands
+
+### Activate venv and show indicator
+
+```bash
+.\venv\Scripts\Activate.ps1
+```
+
+### Install make (requires admin)
+
+```bash
+choco install make -y
+```
