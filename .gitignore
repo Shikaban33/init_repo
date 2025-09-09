@@ -1,0 +1,4 @@
+# Ignore these files
+requirements.txt
+venv/
+__pycache__
