@@ -19,6 +19,15 @@ cleanup:
 	powershell -Command "if (Test-Path 'pyproject.toml') { Remove-Item -Force 'pyproject.toml' }"
 	powershell -Command "if (Test-Path 'poetry.toml') { Remove-Item -Force 'poetry.toml' }"
 
+clean_cache:
+	@echo "Cleaning Poetry cache..."
+	poetry cache clear --all pypi --no-interaction
+	@echo "Removing __pycache__ folders..."
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	@echo "Removing .pytest_cache folders..."
+	find . -type d -name ".pytest_cache" -exec rm -rf {} +
+	@echo "Cache cleanup done."
+
 setup:
 	python -m venv venv
 	.\venv\Scripts\python -m pip install --upgrade pip
