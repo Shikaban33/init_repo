@@ -7,7 +7,7 @@ run:
 
 install:
 	@echo "➜ Installing packages"
-	poetry install
+	poetry install --no-interaction
 
 generate_requitements_file:
 	@echo "➜ Creating requirements.txt"
@@ -28,6 +28,9 @@ setup:
 	poetry cache clear --all pypi --no-interaction
 
 setup_formatting:
-	poetry add --dev flake8 black
-	poetry add --dev pre-commit
-	pre-commit install
+	poetry add --dev flake8 black pre-commit isort --no-interaction -vv
+	poetry run pre-commit install
+
+
+
+

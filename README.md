@@ -14,10 +14,23 @@ make remove_before_setup
 ```bash
 make setup
 ```
+In cmd or powershell activate venv:
 ```bash
-make install
+.\venv\Scripts\Activate.ps1
 ```
-
+```bash
+.\venv\Scripts\activate.bat
+```
+```bash
+make setup_formatting
+```
+Try out tests:
+```bash
+poetry add pytest
+```
+```bash
+poetry run pytest
+```
 ---
 
 ## Create Virtual Environment (venv)
@@ -98,4 +111,13 @@ poetry add pandas
 
 ```bash
 choco install make -y
+```
+
+### Run tests
+
+```bash
+poetry add pytest
+```
+```bash
+poetry run pytest
 ```
