@@ -7,24 +7,26 @@ This guide explains how to set up the project automatically using `make`, Python
 ## Automatic Setup
 
 After installing and configuring `make`, run:
-
+Remove poetry and venv files for clean install
 ```bash
 make remove_before_setup
 ```
+Run initial setup
 ```bash
 make setup
 ```
-In cmd or powershell activate venv:
+In cmd or powershell activate venv
 ```bash
 .\venv\Scripts\Activate.ps1
 ```
 ```bash
 .\venv\Scripts\activate.bat
 ```
+Setup flake, isort, black and pre-commit
 ```bash
 make setup_formatting
 ```
-Try out tests:
+Try out tests
 ```bash
 poetry add pytest
 ```
