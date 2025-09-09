@@ -10,7 +10,11 @@ After installing and configuring `make`, run:
 
 ```bash
 make remove_before_setup
+```
+```bash
 make setup
+```
+```bash
 make install
 ```
 
