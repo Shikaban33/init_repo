@@ -3,11 +3,7 @@ REQ_FILE   ?= requirements.txt
 
 run:
 	@echo "--Running backend--"
-	poetry run python C:\USER\Projects\GA-optimization\project\main.py
-
-run_web:
-	@echo "--Running frontend--"
-	poetry run python -m project\web_application.web_app
+	poetry run python project\app.py
 
 install:
 	@echo "➜ Installing packages"
