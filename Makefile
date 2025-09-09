@@ -1,4 +1,3 @@
-# ─── CONFIG ──────────────────────────────────────────────
 REQ_FILE   ?= requirements.txt
 .PHONY: run run_web install_pack create_req
 
